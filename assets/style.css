@@ -11,6 +11,18 @@
     align-items: center; */
     width: 20%;
     height: 20%;
+    right:50px;
+    margin-top:400px;
+}
+
+.number2 {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    width: 20%;
+    height: 20%;
+    left:50px;
+    margin-top:400px;
 }
 
 .cards-container {
@@ -18,4 +30,8 @@
     justify-content: center;
     /* width: 50%;
     height: 50%; */
+}
+
+.card-header-title {
+    justify-content:center;
 }
