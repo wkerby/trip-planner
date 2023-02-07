@@ -1,34 +1,11 @@
 body {
-    height: 100vh;
+  height: 100vh;
 }
 
 header {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
-
-/* body {
-    display: flex;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-} */
-
-.card {
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-    width: 20%;
-    height: 20%;
-}
-
-.cards-container {
-    display: flex;
-    justify-content: center;
-    /* width: 50%;
-    height: 50%; */
-}
-
