@@ -9,3 +9,41 @@ header {
   justify-content: center;
   height: 100vh;
 }
+
+/* body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+} */
+
+.card {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    width: 20%;
+    height: 20%;
+    right:50px;
+    margin-top:400px;
+}
+
+.number2 {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    width: 20%;
+    height: 20%;
+    left:50px;
+    margin-top:400px;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    /* width: 50%;
+    height: 50%; */
+}
+
+.card-header-title {
+    justify-content:center;
+}
