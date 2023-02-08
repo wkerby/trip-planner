@@ -15,19 +15,16 @@ body {
 }
 
 .header {
-<<<<<<< HEAD
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     height: 20vh;
-=======
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  height: 25vh;
->>>>>>> 4961b57c22ca4fcb5cbdc09ce2367d3ea2032381
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    height: 25vh;
 }
 
 /* body {
@@ -74,21 +71,17 @@ body {
 
 .departures {
     justify-content: center;
-<<<<<<< HEAD
-    <<<<<<< Updated upstream height: 50vh;
+    height: 50vh;
     margin: 10% 20% 20%;
     background-color: rgb(17, 16, 16);
-    =======
     /* height: 100vh; */
     background-color: rgb(17, 16, 16);
-    >>>>>>>Stashed changes border-radius: 10px;
+    border-radius: 10px;
     /* height: 100vh; */
     background-color: rgb(17, 16, 16);
-=======
     height: 40vh;
     margin: 5% 10% 10%;
-    background-color:rgb(17, 16, 16);
->>>>>>> 4961b57c22ca4fcb5cbdc09ce2367d3ea2032381
+    background-color: rgb(17, 16, 16);
     border-radius: 10px;
     padding: 10px;
     align-items: center;
