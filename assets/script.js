@@ -1,4 +1,4 @@
-const tableBody = document.getElementById("table-body")
+const tableBody = document.getElementById("table-body") 
 
 let flights = [
   {
