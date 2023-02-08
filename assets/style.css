@@ -11,14 +11,15 @@ body {
     justify-content: center;
     align-items: center;
     background-color: rgb(255, 215, 221);
+    height: 100vh;
 }
 
 .header {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  height: 20vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    height: 20vh;
 }
 
 /* body {
@@ -34,7 +35,7 @@ body {
     align-items: center; */
     width: 20%;
     height: 20%;
-    right:50px;
+    right: 50px;
 }
 
 .number2 {
@@ -43,7 +44,7 @@ body {
     align-items: center; */
     width: 20%;
     height: 20%;
-    left:50px;
+    left: 50px;
 }
 
 .cards-container {
@@ -54,21 +55,24 @@ body {
 }
 
 .card-header-title {
-    justify-content:center;
+    justify-content: center;
 }
 
 * {
-    font-family: 'Roboto Mono', sans-serif; 
-    color:beige;
+    font-family: 'Roboto Mono', sans-serif;
+    color: beige;
     font-size: 35px;
 }
 
 .departures {
     justify-content: center;
-    height: 50vh;
+    <<<<<<< Updated upstream height: 50vh;
     margin: 10% 20% 20%;
-    background-color:rgb(17, 16, 16);
-    border-radius: 10px;
+    background-color: rgb(17, 16, 16);
+    =======
+    /* height: 100vh; */
+    background-color: rgb(17, 16, 16);
+    >>>>>>>Stashed changes border-radius: 10px;
     padding: 10px;
     align-items: center;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
@@ -84,7 +88,7 @@ body {
 }
 
 .departures table div {
-    border: solid 5px rbg(26,26,26);
+    border: solid 5px rbg(26, 26, 26);
     background-color: black;
     min-width: 20px;
     height: 40px;
@@ -92,37 +96,39 @@ body {
 }
 
 #time {
-width: 160px; 
+    width: 160px;
 }
 
 #destination {
-width: 260px;
+    width: 260px;
 }
 
 #flight {
-width: 205px;
+    width: 205px;
 }
 
 #gate {
-width: 135px;
+    width: 135px;
 }
 
 #remarks {
-width: 260px;
+    width: 260px;
 }
 
 .flip {
-animation: 0.5s linear flipping;
+    animation: 0.5s linear flipping;
 }
 
 @keyframes flipping {
-0% {
-    transform: rotateX(0deg);
-}
-50% {
-    transform: rotateX(90deg);
-}
-100% {
-    transform: rotateX(0deg);
-}
+    0% {
+        transform: rotateX(0deg);
+    }
+
+    50% {
+        transform: rotateX(90deg);
+    }
+
+    100% {
+        transform: rotateX(0deg);
+    }
 }
