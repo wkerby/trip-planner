@@ -7,7 +7,10 @@
 }
 
 body {
-  height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 215, 221);
 }
 
 .header {
@@ -61,9 +64,9 @@ body {
 }
 
 .departures {
-    display: flex;
     justify-content: center;
-    height: 100vh;
+    height: 50vh;
+    margin: 10% 20% 20%;
     background-color:rgb(17, 16, 16);
     border-radius: 10px;
     padding: 10px;
