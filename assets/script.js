@@ -1,6 +1,3 @@
-
-
-
 var requestUrl = "https://restcountries.com/v3.1/all";
 
 const select = document.getElementById("dropdown");
