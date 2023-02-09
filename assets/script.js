@@ -1,59 +1,36 @@
 
 
-var requestUrl = "https://restcountries.com/v3.1/capital/lima";
-
-var requestUrl = "https://restcountries.com/v3.1/all";
 
 //----------------------------------Country Dropdown------------------------------------------------------
 
-var Btn = document.getElementById('Btn');
-const select = document.getElementById("dropdown");
-const xhttp = new XMLHttpRequest();
-const flag = document.getElementById("flag");
+var fetchButton = document.getElementById('fetch-button');
+var select = document.getElementById("dropdown");
+var menu = document.getElementById('selection');
 
 let countries;
 
-xhttp.onreadystatechange = function() {
-  console.log('this.status', this.status);
-  if (this.readyState == 4 && this.status == 200) {
-    countries = JSON.parse(xhttp.responseText);
-    assignValues();
+
+function getApi() {
+
+  var requestUrl = "https://restcountries.com/v2/all?fields=name,capital";
+
+  fetch(requestUrl)
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      for (var i = 0; i < data.length; i++) {
+        var option = document.createElement("option");
+        option.textContent = data[i].capital
+        select.appendChild(option);
+      }
+    })
+    
+    menu.classList.remove('hide');
   }
-};
-xhttp.open("GET", "https://restcountries.com/v3.1/capital/lima", true);
-xhttp.send();
 
-function assignValues() {
-  countries.forEach(country => {
-    const option = document.createElement("option");
-    console.log('country',country)
-    option.value = country.cioc;
-    option.textContent = country.name.common;
-    select.appendChild(option);
-  });
-}
-
-
-
-
-
-Btn.addEventListener("click", function() {
-  selectElement = document.getElementById('dropdown');
-  output = selectElement.value;
-  document.getElementById('language-content').innerHTML = output;
-});
-
-
-
-$(document).on('change', select, function() {
-  var language = $(this).attr('.language-content');
-  var show = $("option:selected", this).data('show');
-  $(target).children().addClass('hide');
-});
-$(document).ready(function(){
-	$(select).trigger('change');
-});
-
+fetchButton.addEventListener('click', getApi );
 
 //----------------------------------Departing Flights Table------------------------------------------------------
 

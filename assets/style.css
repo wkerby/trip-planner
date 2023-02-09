@@ -33,7 +33,9 @@ body {
     height: 15vh;
 }
 
-
+button {
+   margin-top: 12px;
+}
 
 .card {
     width: 30%;
@@ -134,14 +136,12 @@ body {
     }
 }
 
-<<<<<<< HEAD
 .hide {
     display: none;
   }
-=======
+
 #modal-button {
     width: 5%;
     height: 10%;
     border-radius: 50%;
 }
->>>>>>> 276cd2f0673f58eed7035332d2ff222c0e6b6f73

@@ -46,26 +46,21 @@
             <div class="control has-icons-left">
                 <div class="select is-rounded">
                     <div class="control has-icons-left">
-                        <div class="select is-multiple">
-                        <select id="dropdown" class="is-focused">
-                            <option selected>Country</option>
-                        </select>
+                        <div id="selection" class="select is-multiple hide">
                             <select id="dropdown" class="is-focused">
-                                <option selected>Country</option>
-                                <option>Select dropdown</option>
-                                <option></option>
+                                <option selected>Capital Cities</option>
                             </select>
                         </div>
                         <div class="icon is-small is-left">
                             <i class="fas fa-globe"></i>
                         </div>
-                        <button class="Btn">Submit</button>
+                        <button id="fetch-button" class="button is-primary is-rounded is-large is-fullwidth">Show Cities</button>
                     </div>
                 </div>
             </div>
         </header>
 
-        <div class="cards-container">
+        <div class="cards-container hide">
             <div class="card">
                 <header class="card-header">
                     <p class="card-header-title">
@@ -120,12 +115,6 @@
         </div>
 
     </div>
-<<<<<<< HEAD
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-=======
-
->>>>>>> 276cd2f0673f58eed7035332d2ff222c0e6b6f73
     <script src="assets/script.js"></script>
 
 </body>
