@@ -12,46 +12,46 @@
 
 
 <body>
+    <div id="modal">
+        <div id="modal-js-example" class="modal">
 
-    <div id="modal-js-example" class="modal">
+            <div class="modal-background"></div>
 
-        <div class="modal-background"></div>
-    
-        <div class="modal-content">
-          <div class="box">
-            <p>Top 10 most touristic countries:</p>
-            <ul>
-                <li>France</li>
-                <li>Spain</li>
-                <li>United States</li>
-                <li>Italy</li>
-                <li>Turkey</li>
-                <li>Mexico</li>
-                <li>Germany</li>
-                <li>Thailand</li>
-                <li>England</li>
-            </ul>
-          </div>
+            <div class="modal-content">
+                <div class="box">
+                    <p>Top 10 most touristic countries:</p>
+                    <ul>
+                        <li>France</li>
+                        <li>Spain</li>
+                        <li>United States</li>
+                        <li>Italy</li>
+                        <li>Turkey</li>
+                        <li>Mexico</li>
+                        <li>Germany</li>
+                        <li>Thailand</li>
+                        <li>England</li>
+                    </ul>
+                </div>
+            </div>
+
+            <button class="modal-close is-large" aria-label="close"></button>
         </div>
-        
-        <button class="modal-close is-large" aria-label="close"></button>
-      </div>
-      
-      <button class="js-modal-trigger" data-target="modal-js-example">
-        Not sure where to go?
-      </button>
 
+        <button class="js-modal-trigger" data-target="modal-js-example">
+            Not sure where to go?
+        </button>
+    </div>
     <div class="items">
         <header class="header">
             <div class="control has-icons-left">
                 <div class="select is-rounded">
                     <div class="control has-icons-left">
                         <div class="select is-multiple">
-                        <select id="dropdown" class="is-focused">
-                            <option selected>Country</option>
-                            <option>Select dropdown</option>
-                            <option></option>
-                        </select>
+                            <select id="dropdown" class="is-focused">
+                                <option selected>Country</option>
+                                <option>Select dropdown</option>
+                                <option></option>
+                            </select>
                         </div>
                         <div class="icon is-small is-left">
                             <i class="fas fa-globe"></i>
@@ -116,7 +116,7 @@
         </div>
 
     </div>
-    
+
     <script src="assets/script.js"></script>
 
 </body>
