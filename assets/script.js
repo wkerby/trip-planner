@@ -1,8 +1,11 @@
 
 
+var requestUrl = "https://restcountries.com/v3.1/capital/lima";
 
-var requestUrl = "https://restcountries.com/v3.1/all";
 
+//----------------------------------Country Dropdown------------------------------------------------------
+
+var Btn = document.getElementById('Btn');
 const select = document.getElementById("dropdown");
 const xhttp = new XMLHttpRequest();
 const flag = document.getElementById("flag");
@@ -14,10 +17,9 @@ xhttp.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
     countries = JSON.parse(xhttp.responseText);
     assignValues();
-    handleCountryChange();
   }
 };
-xhttp.open("GET", "https://restcountries.com/v3.1/all", true);
+xhttp.open("GET", "https://restcountries.com/v3.1/capital/lima", true);
 xhttp.send();
 
 function assignValues() {
@@ -30,15 +32,29 @@ function assignValues() {
   });
 }
 
-function handleCountryChange() {
-  const countryData = countries.find(
-    country => select.value === country.alpha2Code
-  );
-  flag.style.backgroundImage = `url(${countryData.flag})`;
-}
 
-select.addEventListener("change", handleCountryChange.bind(this));
 
+
+
+Btn.addEventListener("click", function() {
+  selectElement = document.getElementById('dropdown');
+  output = selectElement.value;
+  document.getElementById('language-content').innerHTML = output;
+});
+
+
+
+$(document).on('change', select, function() {
+  var language = $(this).attr('.language-content');
+  var show = $("option:selected", this).data('show');
+  $(target).children().addClass('hide');
+});
+$(document).ready(function(){
+	$(select).trigger('change');
+});
+
+
+//----------------------------------Departing Flights Table------------------------------------------------------
 
 const tableBody = document.getElementById("table-body")
 
