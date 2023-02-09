@@ -1,41 +1,38 @@
-var requestUrl = "https://restcountries.com/v3.1/all";
 
-const select = document.getElementById("dropdown");
-const xhttp = new XMLHttpRequest();
-const flag = document.getElementById("flag");
+
+
+//----------------------------------Country Dropdown------------------------------------------------------
+
+var fetchButton = document.getElementById('fetch-button');
+var select = document.getElementById("dropdown");
+var menu = document.getElementById('selection');
 
 let countries;
 
-xhttp.onreadystatechange = function() {
-  console.log('this.status', this.status);
-  if (this.readyState == 4 && this.status == 200) {
-    countries = JSON.parse(xhttp.responseText);
-    assignValues();
-    handleCountryChange();
+
+function getApi() {
+
+  var requestUrl = "https://restcountries.com/v2/all?fields=name,capital";
+
+  fetch(requestUrl)
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      for (var i = 0; i < data.length; i++) {
+        var option = document.createElement("option");
+        option.textContent = data[i].capital
+        select.appendChild(option);
+      }
+    })
+    
+    menu.classList.remove('hide');
   }
-};
-xhttp.open("GET", "https://restcountries.com/v3.1/all", true);
-xhttp.send();
 
-function assignValues() {
-  countries.forEach(country => {
-    const option = document.createElement("option");
-    console.log('country',country)
-    option.value = country.cioc;
-    option.textContent = country.name.common;
-    select.appendChild(option);
-  });
-}
+fetchButton.addEventListener('click', getApi );
 
-function handleCountryChange() {
-  const countryData = countries.find(
-    country => select.value === country.alpha2Code
-  );
-  flag.style.backgroundImage = `url(${countryData.flag})`;
-}
-
-select.addEventListener("change", handleCountryChange.bind(this));
-
+//----------------------------------Departing Flights Table------------------------------------------------------
 
 const tableBody = document.getElementById("table-body")
 
