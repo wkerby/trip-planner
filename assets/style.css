@@ -30,7 +30,7 @@ body {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    height: 25vh;
+    height: 15vh;
 }
 
 
@@ -134,6 +134,14 @@ body {
     }
 }
 
+<<<<<<< HEAD
 .hide {
     display: none;
   }
+=======
+#modal-button {
+    width: 5%;
+    height: 10%;
+    border-radius: 50%;
+}
+>>>>>>> 276cd2f0673f58eed7035332d2ff222c0e6b6f73

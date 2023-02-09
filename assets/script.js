@@ -2,6 +2,7 @@
 
 var requestUrl = "https://restcountries.com/v3.1/capital/lima";
 
+var requestUrl = "https://restcountries.com/v3.1/all";
 
 //----------------------------------Country Dropdown------------------------------------------------------
 
