@@ -24,7 +24,7 @@ body {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    height: 25vh;
+    height: 15vh;
 }
 
 /* body {
@@ -141,4 +141,10 @@ body {
     100% {
         transform: rotateX(0deg);
     }
+}
+
+#modal-button {
+    width: 5%;
+    height: 10%;
+    border-radius: 50%;
 }
