@@ -147,3 +147,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+const data = null;
+
+const xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function () {
+	if (this.readyState === this.DONE) {
+		console.log(this.responseText);
+	}
+});
+
+xhr.open("GET", "https://timetable-lookup.p.rapidapi.com/TimeTable/BOS/LAX/20231217/");
+xhr.setRequestHeader("X-RapidAPI-Key", "52aab63322mshd42013a9d2eed84p13f5a3jsnc34da247312e");
+xhr.setRequestHeader("X-RapidAPI-Host", "timetable-lookup.p.rapidapi.com");
+
+xhr.send(data);
