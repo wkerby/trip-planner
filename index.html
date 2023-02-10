@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>Trip Planner</title>
+</head>
+
+
+<body>
+    <div class="items">
+        <div id="modal-js-example" class="modal">
+
+            <div class="modal-background"></div>
+
+            <div class="modal-content">
+                <div class="box">
+                    <p>Top 10 most touristic countries:</p>
+                    <ul>
+                        <li>France</li>
+                        <li>Spain</li>
+                        <li>United States</li>
+                        <li>Italy</li>
+                        <li>Turkey</li>
+                        <li>Mexico</li>
+                        <li>Germany</li>
+                        <li>Thailand</li>
+                        <li>England</li>
+                    </ul>
+                </div>
+            </div>
+
+            <button class="modal-close is-large" aria-label="close"></button>
+        </div>
+
+        <button id="modal-button" class="js-modal-trigger" data-target="modal-js-example">
+            i
+        </button>
+
+
+        <header class="header">
+            <div class="control has-icons-left">
+                <div class="select is-rounded">
+                    <div class="control has-icons-left">
+                        <div id="selection" class="select is-multiple hide">
+                            <select id="dropdown" class="is-focused">
+                                <option selected>Capital Cities</option>
+                            </select>
+                        </div>
+                        <div class="icon is-small is-left">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <button id="fetch-button" class="button is-primary is-rounded is-large is-fullwidth">Show Cities</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="cards-container hide">
+            <div class="card">
+                <header class="card-header">
+                    <p class="card-header-title">
+                        LANGUAGE
+                    </p>
+                    <button class="card-header-icon" aria-label="more options">
+                        <span class="icon">
+                            <i class="fas fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                    </button>
+                </header>
+                <div class="card-content">
+                    <div class="content" id="language-content">
+                        LANGUAGE
+                    </div>
+                </div>
+            </div>
+
+            <div class="card number2">
+                <header class="card-header">
+                    <p class="card-header-title">
+                        CURRENCY
+                    </p>
+                    <button class="card-header-icon" aria-label="more options">
+                        <span class="icon">
+                            <i class="fas fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                    </button>
+                </header>
+                <div class="card-content">
+                    <div class="content" id="currency-content">
+                        CURRENCY
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="departures">
+            <h1>DEPARTING FLIGHTS ✈ </h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th id="time">TIME</th>
+                        <th id="destination">DESTINATION</th>
+                        <th id="flight">FLIGHT</th>
+                        <th id="gate">GATE</th>
+                        <th id="remarks">REMARKS</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body"></tbody>
+            </table>
+        </div>
+
+    </div>
+    <script src="assets/script.js"></script>
+
+</body>
+
+</html>
