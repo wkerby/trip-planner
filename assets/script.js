@@ -147,24 +147,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // API
+function getCityID(city) {
+  // var city = document.querySelector("option").textContent;
+  var fetchUrl = "https://travel-advisor.p.rapidapi.com/locations/search?query=" + city + "&limit=30&offset=0&units=km&location_id=1&currency=USD&sort=relevance&lang=en_US"
 
-var city_id = 298566;
+  var apiOptions = {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Key': 'b7e094d3c2msh52a7cd5d6c4a551p1d89aejsn6732427ea5d2',
+      'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com'
+    }
+  };
 
-
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': '52aab63322mshd42013a9d2eed84p13f5a3jsnc34da247312e',
-		'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com'
-	}
-};
-
-function list_attraction () {
-  var requestUrl = "https://travel-advisor.p.rapidapi.com/attractions/list?location_id=" + city_id + "&currency=USD&lang=en_US&lunit=km&sort=recommended"
-  
-  fetch(requestUrl, options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
+  fetch(fetchUrl, apiOptions)
+    .then(function (response) {
+      console.log("Response: " + response.status);
+      return response.json();
+    })
+    .then(function (data) {
+      console.log("We are here");
+      for (var i = 0; i < data.data.length; i++) {
+        var city_array = data.data
+        if (city_array[i].result_type === "things_to_do") {
+          var city_1 = city_array[i]
+          console.log(city_1.name);
+        }
+      };
+    });
 
 }
+
+getCityID("pattaya");
