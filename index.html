@@ -46,21 +46,23 @@
             <div class="control has-icons-left">
                 <div class="select is-rounded">
                     <div class="control has-icons-left">
-                        <div class="select is-multiple">
+                        <div id="selection" class="select is-multiple hide">
                             <select id="dropdown" class="is-focused">
                                 <option selected>Country</option>
                                 <option> -- </option>
+                                <option selected>Capital Cities</option>
                             </select>
                         </div>
                         <div class="icon is-small is-left">
                             <i class="fas fa-globe"></i>
                         </div>
+                        <button id="fetch-button" class="button is-primary is-rounded is-large is-fullwidth">Show Cities</button>
                     </div>
                 </div>
             </div>
         </header>
 
-        <div class="cards-container">
+        <div class="cards-container hide">
             <div class="card">
                 <header class="card-header">
                     <p class="card-header-title">
@@ -73,7 +75,7 @@
                     </button>
                 </header>
                 <div class="card-content">
-                    <div class="content">
+                    <div class="content" id="language-content">
                         LANGUAGE
                     </div>
                 </div>
@@ -91,7 +93,7 @@
                     </button>
                 </header>
                 <div class="card-content">
-                    <div class="content">
+                    <div class="content" id="currency-content">
                         CURRENCY
                     </div>
                 </div>
@@ -115,7 +117,6 @@
         </div>
 
     </div>
-
     <script src="assets/script.js"></script>
 
 </body>
