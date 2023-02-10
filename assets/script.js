@@ -1,6 +1,4 @@
 
-
-
 //----------------------------------Country Dropdown------------------------------------------------------
 
 var fetchButton = document.getElementById('fetch-button');
@@ -15,7 +13,7 @@ function getApi() {
   var requestUrl = "https://restcountries.com/v2/all?fields=name,capital";
 
   fetch(requestUrl)
-    .then(function(response) {
+    .then(function (response) {
       return response.json();
     })
     .then(function (data) {
@@ -26,11 +24,11 @@ function getApi() {
         select.appendChild(option);
       }
     })
-    
-    menu.classList.remove('hide');
-  }
 
-fetchButton.addEventListener('click', getApi );
+  menu.classList.remove('hide');
+}
+
+fetchButton.addEventListener('click', getApi);
 
 //----------------------------------Departing Flights Table------------------------------------------------------
 
@@ -43,14 +41,14 @@ let flights = [
     flight: "OX 203",
     gate: "A 01",
     remarks: "ON TIME"
-    },
+  },
   {
     time: "12:39",
     destination: "LONDON",
     flight: "CL 320",
     gate: "C 31",
     remarks: "CANCELLED"
-    },
+  },
   {
     time: "13:21",
     destination: "DUBAI",
@@ -74,11 +72,11 @@ let flights = [
   }
 ]
 
-function populateTable () {
+function populateTable() {
   for (const flight of flights) {
     const tableRow = document.createElement("tr")
 
-    for( const flightDetail in flight) {
+    for (const flightDetail in flight) {
       const tableCell = document.createElement("td")
       const word = Array.from(flight[flightDetail])
 
@@ -86,9 +84,9 @@ function populateTable () {
         const letterElement = document.createElement('div')
 
         setTimeout(() => {
-        letterElement.classList.add('flip')
-        letterElement.textContent = letter
-        tableCell.append(letterElement)
+          letterElement.classList.add('flip')
+          letterElement.textContent = letter
+          tableCell.append(letterElement)
         }, 100 * index)
 
       }
@@ -144,3 +142,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+//create function that fetches city ID based off of city input
+function getAttractions(city) {
+  // var city = document.querySelector("option").textContent;
+  var fetchUrl = "https://travel-advisor.p.rapidapi.com/locations/search?query=" + city + "&limit=30&offset=0&units=km&location_id=1&currency=USD&sort=relevance&lang=en_US"
+
+  var apiOptions = {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Key': 'b7e094d3c2msh52a7cd5d6c4a551p1d89aejsn6732427ea5d2',
+      'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com'
+    }
+  };
+
+  fetch(fetchUrl, apiOptions)
+    .then(function (response) {
+      console.log("Response: " + response.status);
+      return response.json();
+    })
+    .then(function (data) {
+      for (var i = 0; i < data.data.length; i++) {
+        if (data.data[i].result_type === "things_to_do") {
+          console.log(data.data[i].result_object.name);
+        }
+      };
+    });
+
+}
+
+getAttractions("pattaya");
+
+
+
