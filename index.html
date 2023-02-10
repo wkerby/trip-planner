@@ -18,7 +18,7 @@
             <div class="modal-background"></div>
 
             <div class="modal-content">
-                <div class="box">
+                <div class="modal-box">
                     <p>Top 10 most touristic countries:</p>
                     <ul>
                         <li>Bangkok</li>
@@ -55,75 +55,17 @@
                         <div class="icon is-small is-left">
                             <i class="fas fa-globe"></i>
                         </div>
-                        <button id="fetch-button" class="button is-primary is-rounded is-large is-fullwidth">Show
-                            Cities</button>
+                        <button id="fetch-button" class="button is-primary is-rounded is-large is-fullwidth" onclick= "hideButton()" >Show Cities</button>
                     </div>
                 </div>
             </div>
         </header>
 
-        <div class="cards-container hide">
-            <div class="card">
-                <header class="card-header">
-                    <p class="card-header-title">
-                        LANGUAGE
-                    </p>
-                    <button class="card-header-icon" aria-label="more options">
-                        <span class="icon">
-                            <i class="fas fa-angle-down" aria-hidden="true"></i>
-                        </span>
-                    </button>
-                </header>
-                <div class="card-content">
-                    <div class="content" id="language-content">
-                        LANGUAGE
-                    </div>
-                </div>
-            </div>
-
-            <div class="card number2">
-                <header class="card-header">
-                    <p class="card-header-title">
-                        CURRENCY
-                    </p>
-                    <button class="card-header-icon" aria-label="more options">
-                        <span class="icon">
-                            <i class="fas fa-angle-down" aria-hidden="true"></i>
-                        </span>
-                    </button>
-                </header>
-                <div class="card-content">
-                    <div class="content" id="currency-content">
-                        CURRENCY
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="box">
-            <ul class="attractions">
-                <li>item 1</li>
-                <li>item 1</li>
-                <li>item 1</li>
-                <li>item 1</li>
-                <li>item 1</li>
+         <div class="box">
+            <ul id= "attractions-list" class="attractions">
+                <li></li>
             </ul>
         </div>
-        <!-- <div class="departures">
-            <h1>DEPARTING FLIGHTS ✈ </h1>
-            <table>
-                <thead>
-                    <tr>
-                        <th id="time">TIME</th>
-                        <th id="destination">DESTINATION</th>
-                        <th id="flight">FLIGHT</th>
-                        <th id="gate">GATE</th>
-                        <th id="remarks">REMARKS</th>
-                    </tr>
-                </thead>
-                <tbody id="table-body"></tbody>
-            </table>
-        </div> -->
-
     </div>
     <script src="assets/script.js"></script>
 
