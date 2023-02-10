@@ -10,7 +10,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(255, 215, 221);
+    background-color: #081f37;
     height: 100vh;
 }
 
@@ -65,12 +65,12 @@ body {
 
 * {
     font-family: 'Roboto Mono', sans-serif;
-    color: beige;
     font-size: 35px;
 }
 
 .departures {
     justify-content: center;
+    color: #f7f6e7;
     height: 50vh;
     margin: 10% 20% 20%;
     background-color: rgb(17, 16, 16);
@@ -79,7 +79,7 @@ body {
     border-radius: 10px;
     /* height: 100vh; */
     background-color: rgb(17, 16, 16);
-    height: 40vh;
+    /* height: 40vh; */
     margin: 5% 10% 10%;
     background-color: rgb(17, 16, 16);
     border-radius: 10px;
@@ -89,17 +89,27 @@ body {
 }
 
 .departures table {
-    background-color: rgb(46, 46, 46);
+    background-color:#c1c0b9;
     text-align: left;
+    border-radius: 10px;
 }
 
 .departures table td {
     height: 50px;
 }
 
+.departures h1 {
+    color:#537791;
+}
+
+.departures table th {
+    color:#323643;
+}
+
 .departures table div {
+    display: flex;
     border: solid 5px rbg(26, 26, 26);
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     min-width: 20px;
     height: 40px;
     float: left;

@@ -148,19 +148,26 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-const data = null;
 
-const xhr = new XMLHttpRequest();
-xhr.withCredentials = true;
+// API
 
-xhr.addEventListener("readystatechange", function () {
-	if (this.readyState === this.DONE) {
-		console.log(this.responseText);
+var city_id = 298566;
+
+
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '52aab63322mshd42013a9d2eed84p13f5a3jsnc34da247312e',
+		'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com'
 	}
-});
+};
 
-xhr.open("GET", "https://timetable-lookup.p.rapidapi.com/TimeTable/BOS/LAX/20231217/");
-xhr.setRequestHeader("X-RapidAPI-Key", "52aab63322mshd42013a9d2eed84p13f5a3jsnc34da247312e");
-xhr.setRequestHeader("X-RapidAPI-Host", "timetable-lookup.p.rapidapi.com");
+function list_attraction () {
+  var requestUrl = "https://travel-advisor.p.rapidapi.com/attractions/list?location_id=" + city_id + "&currency=USD&lang=en_US&lunit=km&sort=recommended"
+  
+  fetch(requestUrl, options)
+	.then(response => response.json())
+	.then(response => console.log(response))
+	.catch(err => console.error(err));
 
-xhr.send(data);
+}
