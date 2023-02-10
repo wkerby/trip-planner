@@ -1,6 +1,4 @@
 
-
-
 //----------------------------------Country Dropdown------------------------------------------------------
 
 var fetchButton = document.getElementById('fetch-button');
