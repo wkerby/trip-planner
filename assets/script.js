@@ -171,7 +171,7 @@ function getAttractions(city) {
 
 }
 
-getCityID("pattaya");
+getAttractions("pattaya");
 
 
 
