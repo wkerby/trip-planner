@@ -98,7 +98,7 @@ const attractionsList = document.getElementById("attractions-list")
 
 //       }
 //       tableRow.append(tableCell)
-//     
+//     }
 //     tableBody.append(tableRow)
 //   }
 // }
@@ -155,6 +155,8 @@ const attractions = []
 //create function that fetches city ID based off of city input
 function getAttractions(city) {
   // var city = document.querySelector("option").textContent;
+  // var boxOrderListEl = documnent.querySelector(".attractions");
+  console.log(ulAttractionsEl);
   var fetchUrl = "https://travel-advisor.p.rapidapi.com/locations/search?query=" + city + "&limit=30&offset=0&units=km&location_id=1&currency=USD&sort=relevance&lang=en_US"
 
   var apiOptions = {
@@ -173,11 +175,15 @@ function getAttractions(city) {
     .then(function (data) {
       for (var i = 0; i < data.data.length; i++) {
         if (data.data[i].result_type === "things_to_do") {
-          console.log(data.data[i].result_object.name);
-          attractions[i] = data.data[i].result_object.name
-          const newEntry = document.createElement("li")
-            // const tableCell = document.createElement("td")
-            // const word = array.from(places)
+          var ulAttractionsEl = document.querySelector('#attractions-list');
+          var attraction = data.data[i].result_object.name;
+          var newLi = document.createElement("li");
+          newLi.textContent = attraction;
+          ulAttractionsEl.appendChild(newLi);
+
+        }
+      };
+    });
 
           // for (const [index, letter] of word.entries()) {
           //   const letterElement = document.createElement('div')
@@ -192,9 +198,9 @@ function getAttractions(city) {
           attractionsList.append(newEntry)
         }
       // tableBody.append(tableRow)
-} } )};
 
-getAttractions("pattaya");
+
+getAttractions("New York");
 
 
 
