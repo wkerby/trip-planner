@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@1&display=swap');
 
+* {
+    font-family: 'Roboto Mono', sans-serif;
+    color: beige;
+    font-size: 35px;
+}
+
 .items {
     display: flex;
     flex-direction: column;
@@ -27,26 +33,17 @@ body {
     height: 15vh;
 }
 
-/* body {
-    display: flex;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-} */
+button {
+   margin-top: 12px;
+}
 
 .card {
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
     width: 30%;
     height: 20%;
     right: 50px;
 }
 
 .number2 {
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
     width: 30%;
     height: 20%;
     left: 50px;
@@ -55,18 +52,16 @@ body {
 .cards-container {
     display: flex;
     justify-content: center;
-    /* width: 50%;
-    height: 50%; */
 }
 
 .card-header-title {
     justify-content: center;
 }
 
-* {
-    font-family: 'Roboto Mono', sans-serif;
-    color: beige;
-    font-size: 35px;
+
+.content {
+    color:black;
+    font-size: 65%;
 }
 
 .departures {
@@ -74,10 +69,8 @@ body {
     height: 50vh;
     margin: 10% 20% 20%;
     background-color: rgb(17, 16, 16);
-    /* height: 100vh; */
     background-color: rgb(17, 16, 16);
     border-radius: 10px;
-    /* height: 100vh; */
     background-color: rgb(17, 16, 16);
     height: 40vh;
     margin: 5% 10% 10%;
@@ -142,6 +135,10 @@ body {
         transform: rotateX(0deg);
     }
 }
+
+.hide {
+    display: none;
+  }
 
 #modal-button {
     width: 5%;
