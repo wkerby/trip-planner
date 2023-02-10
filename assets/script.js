@@ -72,31 +72,31 @@ let flights = [
   }
 ]
 
-function populateTable() {
-  for (const flight of flights) {
-    const tableRow = document.createElement("tr")
+// function populateTable() {
+//   for (const flight of flights) {
+//     const tableRow = document.createElement("tr")
 
-    for (const flightDetail in flight) {
-      const tableCell = document.createElement("td")
-      const word = Array.from(flight[flightDetail])
+//     for (const flightDetail in flight) {
+//       const tableCell = document.createElement("td")
+//       const word = Array.from(flight[flightDetail])
 
-      for (const [index, letter] of word.entries()) {
-        const letterElement = document.createElement('div')
+//       for (const [index, letter] of word.entries()) {
+//         const letterElement = document.createElement('div')
 
-        setTimeout(() => {
-          letterElement.classList.add('flip')
-          letterElement.textContent = letter
-          tableCell.append(letterElement)
-        }, 100 * index)
+//         setTimeout(() => {
+//           letterElement.classList.add('flip')
+//           letterElement.textContent = letter
+//           tableCell.append(letterElement)
+//         }, 100 * index)
 
-      }
-      tableRow.append(tableCell)
-    }
-    tableBody.append(tableRow)
-  }
-}
+//       }
+//       tableRow.append(tableCell)
+//     }
+//     tableBody.append(tableRow)
+//   }
+// }
 
-populateTable()
+// populateTable()
 
 document.addEventListener('DOMContentLoaded', () => {
   // Functions to open and close a modal
@@ -146,6 +146,8 @@ document.addEventListener('DOMContentLoaded', () => {
 //create function that fetches city ID based off of city input
 function getAttractions(city) {
   // var city = document.querySelector("option").textContent;
+  // var boxOrderListEl = documnent.querySelector(".attractions");
+  console.log(ulAttractionsEl);
   var fetchUrl = "https://travel-advisor.p.rapidapi.com/locations/search?query=" + city + "&limit=30&offset=0&units=km&location_id=1&currency=USD&sort=relevance&lang=en_US"
 
   var apiOptions = {
@@ -164,14 +166,20 @@ function getAttractions(city) {
     .then(function (data) {
       for (var i = 0; i < data.data.length; i++) {
         if (data.data[i].result_type === "things_to_do") {
-          console.log(data.data[i].result_object.name);
+          var ulAttractionsEl = document.querySelector('#attractions-list');
+          var attraction = data.data[i].result_object.name;
+          var newLi = document.createElement("li");
+          newLi.textContent = attraction;
+          ulAttractionsEl.appendChild(newLi);
+
         }
       };
     });
 
 }
 
-getAttractions("pattaya");
+
+getAttractions("New York");
 
 
 
