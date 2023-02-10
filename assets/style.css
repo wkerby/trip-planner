@@ -33,8 +33,15 @@ body {
     height: 15vh;
 }
 
-button {
+#modal-button {
+    width: 15%;
+    height: 10%;
+    border-radius: 80%;
+}
+
+.button {
    margin-top: 12px;
+   min-width: 40vh;
 }
 
 .card {
@@ -138,10 +145,4 @@ button {
 
 .hide {
     display: none;
-  }
-
-#modal-button {
-    width: 5%;
-    height: 10%;
-    border-radius: 50%;
 }

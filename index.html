@@ -54,7 +54,7 @@
                         <div class="icon is-small is-left">
                             <i class="fas fa-globe"></i>
                         </div>
-                        <button id="fetch-button" class="button is-primary is-rounded is-large is-fullwidth">Show Cities</button>
+                        <button id="fetch-button" class="button is-primary is-rounded is-large is-fullwidth" onclick= "hideButton()" >Show Cities</button>
                     </div>
                 </div>
             </div>
@@ -97,8 +97,15 @@
                 </div>
             </div>
         </div>
-
-        <div class="departures">
+        <div class ="box">
+            <ul  id="attractions-list" class = "attractions">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+        </div>    
+        <!-- <div class="departures">
             <h1>DEPARTING FLIGHTS ✈ </h1>
             <table>
                 <thead>
@@ -112,7 +119,7 @@
                 </thead>
                 <tbody id="table-body"></tbody>
             </table>
-        </div>
+        </div> -->
 
     </div>
     <script src="assets/script.js"></script>

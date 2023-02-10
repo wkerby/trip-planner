@@ -28,75 +28,82 @@ function getApi() {
   menu.classList.remove('hide');
 }
 
-fetchButton.addEventListener('click', getApi);
+function hideButton(){
+
+  document.getElementById('fetch-button').style.display= 'none';
+  
+}
+
+fetchButton.addEventListener('click', getApi)
+
 
 //----------------------------------Departing Flights Table------------------------------------------------------
 
-const tableBody = document.getElementById("table-body")
+const attractionsList = document.getElementById("attractions-list")
 
-let flights = [
-  {
-    time: "08:11",
-    destination: "OMAN",
-    flight: "OX 203",
-    gate: "A 01",
-    remarks: "ON TIME"
-  },
-  {
-    time: "12:39",
-    destination: "LONDON",
-    flight: "CL 320",
-    gate: "C 31",
-    remarks: "CANCELLED"
-  },
-  {
-    time: "13:21",
-    destination: "DUBAI",
-    flight: "DXB 201",
-    gate: "A 19",
-    remarks: "CANCELLED"
-  },
-  {
-    time: "14:01",
-    destination: "FRANKFURT",
-    flight: "FR 402",
-    gate: "B 02",
-    remarks: "ON TIME"
-  },
-  {
-    time: "15:22",
-    destination: "TOKYO",
-    flight: "TK 211",
-    gate: "A 32",
-    remarks: "DELAYED"
-  }
-]
+// let flights = [
+//   {
+//     time: "08:11",
+//     destination: "OMAN",
+//     flight: "OX 203",
+//     gate: "A 01",
+//     remarks: "ON TIME"
+//   },
+//   {
+//     time: "12:39",
+//     destination: "LONDON",
+//     flight: "CL 320",
+//     gate: "C 31",
+//     remarks: "CANCELLED"
+//   },
+//   {
+//     time: "13:21",
+//     destination: "DUBAI",
+//     flight: "DXB 201",
+//     gate: "A 19",
+//     remarks: "CANCELLED"
+//   },
+//   {
+//     time: "14:01",
+//     destination: "FRANKFURT",
+//     flight: "FR 402",
+//     gate: "B 02",
+//     remarks: "ON TIME"
+//   },
+//   {
+//     time: "15:22",
+//     destination: "TOKYO",
+//     flight: "TK 211",
+//     gate: "A 32",
+//     remarks: "DELAYED"
+//   }
+// ]
 
-function populateTable() {
-  for (const flight of flights) {
-    const tableRow = document.createElement("tr")
+// function populateTable() {
+//   for (const flight of flights) {
+//     const tableRow = document.createElement("tr")
 
-    for (const flightDetail in flight) {
-      const tableCell = document.createElement("td")
-      const word = Array.from(flight[flightDetail])
+//     for (const flightDetail in flight) {
+//       const tableCell = document.createElement("td")
+//       const word = Array.from(flight[flightDetail])
 
-      for (const [index, letter] of word.entries()) {
-        const letterElement = document.createElement('div')
+//       for (const [index, letter] of word.entries()) {
+//         const letterElement = document.createElement('div')
 
-        setTimeout(() => {
-          letterElement.classList.add('flip')
-          letterElement.textContent = letter
-          tableCell.append(letterElement)
-        }, 100 * index)
+//         setTimeout(() => {
+//           letterElement.classList.add('flip')
+//           letterElement.textContent = letter
+//           tableCell.append(letterElement)
+//         }, 100 * index)
 
-      }
-      tableRow.append(tableCell)
-    }
-    tableBody.append(tableRow)
-  }
-}
+//       }
+//       tableRow.append(tableCell)
+//     
+//     tableBody.append(tableRow)
+//   }
+// }
 
-populateTable()
+// populateTable()
 
 document.addEventListener('DOMContentLoaded', () => {
   // Functions to open and close a modal
@@ -143,6 +150,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+const attractions = []
+
 //create function that fetches city ID based off of city input
 function getAttractions(city) {
   // var city = document.querySelector("option").textContent;
@@ -165,13 +174,29 @@ function getAttractions(city) {
       for (var i = 0; i < data.data.length; i++) {
         if (data.data[i].result_type === "things_to_do") {
           console.log(data.data[i].result_object.name);
-        }
-      };
-    });
+          attractions[i] = data.data[i].result_object.name
+          const newEntry = document.createElement("li")
+            // const tableCell = document.createElement("td")
+            // const word = array.from(places)
 
-}
+          // for (const [index, letter] of word.entries()) {
+          //   const letterElement = document.createElement('div')
+
+          //   setTimeout(() => {
+          //     letterElement.classList.add('flip')
+          //     letterElement.textContent = letter
+          //     tableCell.append(letterElement)
+          //   }, 100 * index)
+
+          // }
+          attractionsList.append(newEntry)
+        }
+      // tableBody.append(tableRow)
+} } )};
 
 getAttractions("pattaya");
+
+
 
 
 
