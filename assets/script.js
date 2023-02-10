@@ -1,41 +1,5 @@
 
-//----------------------------------Country Dropdown------------------------------------------------------
-
-var fetchButton = document.getElementById('fetch-button');
-var select = document.getElementById("dropdown");
-var menu = document.getElementById('selection');
-
-let countries;
-
-
-function getApi() {
-
-  var requestUrl = "https://restcountries.com/v2/all?fields=name,capital";
-
-  fetch(requestUrl)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data);
-      for (var i = 0; i < data.length; i++) {
-        var option = document.createElement("option");
-        option.textContent = data[i].capital
-        select.appendChild(option);
-      }
-    })
-
-  menu.classList.remove('hide');
-}
-
-function hideButton(){
-
-  document.getElementById('fetch-button').style.display= 'none';
-  
-}
-
-fetchButton.addEventListener('click', getApi)
-
+//----------------------------------Modal------------------------------------------------------
 
 document.addEventListener('DOMContentLoaded', () => {
   // Functions to open and close a modal
@@ -82,6 +46,40 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+
+//----------------------------------Country Dropdown------------------------------------------------------
+
+var fetchButton = document.getElementById('fetch-button');
+var select = document.getElementById("dropdown");
+var menu = document.getElementById('selection');
+
+function getApi() {
+
+  var requestUrl = "https://restcountries.com/v2/all?fields=name,capital";
+
+  fetch(requestUrl)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      for (var i = 0; i < data.length; i++) {
+        var option = document.createElement("option");
+        option.textContent = data[i].capital
+        select.appendChild(option);
+      }
+    })
+  menu.classList.remove('hide');
+}
+
+function hideButton(){
+  document.getElementById('fetch-button').style.display= 'none';
+}
+
+fetchButton.addEventListener('click', getApi)
+
+//----------------------------------Attraction List Box------------------------------------------------------
+
 // const attractions = []
 
 //create function that fetches city ID based off of city input
@@ -113,16 +111,19 @@ function getAttractions(city) {
           newLi.setAttribute('class', 'attraction');
           newLi.textContent = attraction;
           ulAttractionsEl.appendChild(newLi);
-  
         }
       };
 
     });
-
 }
 
-getAttractions("pattaya");
 
+var selectedCapital = document.getElementById("dropdown");
+
+function setSelectedValue() {
+  var selected_value = selectedCapital.options[selectedCapital.selectedIndex].value;
+  getAttractions(selected_value);
+}
 
 
 
