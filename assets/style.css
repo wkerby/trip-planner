@@ -2,7 +2,7 @@
 
 * {
     font-family: 'Open Sans', sans-serif;
-    color: beige;
+    color: black;
     font-size: 35px;
 }
 
@@ -89,4 +89,8 @@ h1 {
     margin-bottom: 5%;
     margin-left: 10%;
     width: 80%;
+}
+
+#dropdown option {
+    text-align: center;
 }
