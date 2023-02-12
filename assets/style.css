@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@1&display=swap');
 
 * {
-    font-family: 'Roboto Mono', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     color: beige;
     font-size: 35px;
 }
@@ -31,6 +31,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 15vh;
+    margin-left: 7%;
 }
 
 .button {
@@ -50,9 +51,10 @@ body {
 }
 
 #modal-button {
-    max-width:11%;
+    max-width: 11%;
     height: 10%;
     border-radius: 50%;
+    margin-right: 3%;
 }
 
 .modal-box {
@@ -67,9 +69,24 @@ body {
     border-radius: 10px;
     height: 40vh;
     min-width: 60vh;
-    margin: 5% 70% 10% 5%;
+    margin: 5% 5% 10% 5%;
     border-radius: 10px;
     padding: 10px;
     align-items: center;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2em;
+    /* padding-left: 3%; */
+}
+
+.header-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5%;
+    margin-left: 10%;
+    width: 80%;
 }
