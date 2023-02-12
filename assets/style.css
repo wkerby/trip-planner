@@ -16,7 +16,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(255, 215, 221);
+    background-color: lightskyblue;
     height: 100vh;
 }
 
@@ -54,11 +54,16 @@ body {
     max-width: 11%;
     height: 10%;
     border-radius: 50%;
-    margin-right: 3%;
+    margin-right: 5%;
 }
 
 .modal-box {
     height: 40%;
+}
+
+.modal-box ul li,
+.modal-box p {
+    color: white;
 }
 
 .box {
@@ -86,11 +91,14 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 5%;
     margin-left: 10%;
     width: 80%;
 }
 
 #dropdown option {
     text-align: center;
+}
+
+#fetch-button {
+    background-color: darkgrey;
 }
