@@ -148,4 +148,3 @@ function removeEls(someList) {
   };
 };
 
-setSelectedValue();
