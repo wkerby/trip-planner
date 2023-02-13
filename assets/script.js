@@ -62,7 +62,7 @@ function getApi() {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
+      // console.log(data);
       for (var i = 0; i < data.length; i++) {
         var option = document.createElement("option");
         option.textContent = data[i].capital
@@ -72,8 +72,8 @@ function getApi() {
   menu.classList.remove('hide');
 }
 
-function hideButton(){
-  document.getElementById('fetch-button').style.display= 'none';
+function hideButton() {
+  document.getElementById('fetch-button').style.display = 'none';
 }
 
 fetchButton.addEventListener('click', getApi)
@@ -85,8 +85,9 @@ fetchButton.addEventListener('click', getApi)
 //create function that fetches city ID based off of city input
 function getAttractions(city) {
   // var city = document.querySelector("option").textContent;
+  var ulAttractionsEl = document.querySelector('#attractions-list'); //remove any li elements from previous search
+  removeEls(ulAttractionsEl);
   var fetchUrl = "https://travel-advisor.p.rapidapi.com/locations/search?query=" + city + "&limit=30&offset=0&units=km&location_id=1&currency=USD&sort=relevance&lang=en_US"
-  var ulAttractionsEl = document.querySelector('#attractions-list');
 
   var apiOptions = {
     method: 'GET',
@@ -98,13 +99,13 @@ function getAttractions(city) {
 
   fetch(fetchUrl, apiOptions)
     .then(function (response) {
-      console.log("Response: " + response.status);
+      // console.log("Response: " + response.status);
       return response.json();
     })
     .then(function (data) {
       for (var i = 0; i < data.data.length; i++) {
         if (data.data[i].result_type === "things_to_do") {
-          console.log(data.data[i].result_object);
+          // console.log(data.data[i].result_object);
           console.log(data.data[i].result_object.name);
           var attraction = data.data[i].result_object.name;
           var newLi = document.createElement("li");
@@ -115,6 +116,9 @@ function getAttractions(city) {
       };
 
     });
+  var ulAttractionsEl = document.querySelector('#attractions-list');
+  console.log(ulAttractionsEl.children);
+
 }
 
 
@@ -126,4 +130,21 @@ function setSelectedValue() {
 }
 
 
+
+//create fucntion that removes all child elements of a parent element
+function removeEls(someList) {
+  if (someList.children.length > 0) {
+    listItems = someList.children
+    console.log(listItems);
+    console.log("Current num list items: " + listItems.length);
+    for (var i = 0; i < listItems.length; i++) {
+      console.log(listItems.length);
+      someList.children[i].remove();
+    };
+  }
+
+  else {
+    console.log("no els to remove")
+  };
+};
 

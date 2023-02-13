@@ -7,41 +7,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <title>Trip Planner</title>
 </head>
 
 
 <body>
     <div class="items">
-        <div id="modal-js-example" class="modal">
+        <div class="header-items">
+            <div id="modal-js-example" class="modal">
 
-            <div class="modal-background"></div>
+                <div class="modal-background"></div>
 
-            <div class="modal-content">
-                <div class="modal-box">
-                    <p>Top 10 most touristic countries:</p>
-                    <ul>
-                        <li>Bangkok</li>
-                        <li>Paris</li>
-                        <li>London</li>
-                        <li>Dubai</li>
-                        <li>Singapore</li>
-                        <li>Kuala Lumpur</li>
-                        <li>New York</li>
-                        <li>Istanbul</li>
-                        <li>Tokyo</li>
-                        <li>Antalya</li>
-                    </ul>
+                <div class="modal-content">
+                    <div class="modal-box">
+                        <p>Not sure where to go? Here's a list of the world's 10 most visited cities:</p>
+                        <ul>
+                            <li>Bangkok</li>
+                            <li>Paris</li>
+                            <li>London</li>
+                            <li>Dubai</li>
+                            <li>Singapore</li>
+                            <li>Kuala Lumpur</li>
+                            <li>New York</li>
+                            <li>Istanbul</li>
+                            <li>Tokyo</li>
+                            <li>Antalya</li>
+                        </ul>
+                    </div>
                 </div>
+
+                <button class="modal-close is-large" aria-label="close"></button>
             </div>
 
-            <button class="modal-close is-large" aria-label="close"></button>
+            <button id="modal-button" class="js-modal-trigger" data-target="modal-js-example">
+                &#128747
+            </button>
+
+            <h1>Trip Planner</h1>
+
         </div>
-
-        <button id="modal-button" class="js-modal-trigger" data-target="modal-js-example">
-            &#128747
-        </button>
-
 
         <header class="header">
             <div class="control has-icons-left">
@@ -55,15 +60,15 @@
                         <div class="icon is-small is-left">
                             <i class="fas fa-globe"></i>
                         </div>
-                        <button id="fetch-button" class="button is-primary is-rounded is-large is-fullwidth" onclick= "hideButton()" >Show Cities</button>
+                        <button id="fetch-button" class="button is-primary is-rounded is-large is-fullwidth"
+                            onclick="hideButton()">Show Cities</button>
                     </div>
                 </div>
             </div>
         </header>
 
-         <div class="box">
-            <ul id= "attractions-list" class="attractions">
-                <li></li>
+        <div class="box">
+            <ul id="attractions-list" class="attractions">
             </ul>
         </div>
     </div>
