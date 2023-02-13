@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@1&display=swap');
 
 * {
-    font-family: 'Roboto Mono', sans-serif;
-    color: beige;
+    font-family: 'Open Sans', sans-serif;
+    color: black;
     font-size: 35px;
 }
 
@@ -16,7 +16,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #081f37;
+    background-color: rgb(147, 210, 249);
     height: 100vh;
 }
 
@@ -31,127 +31,75 @@ body {
     align-items: center;
     justify-content: center;
     height: 15vh;
+    margin-left: 7%;
 }
 
-button {
-   margin-top: 12px;
+.button {
+    margin-top: 12px;
+    min-width: 40vh;
 }
 
-.card {
-    width: 30%;
-    height: 20%;
-    right: 50px;
+
+.content {
+    color: black;
+    font-size: 65%;
 }
 
-.number2 {
-    width: 30%;
-    height: 20%;
-    left: 50px;
+
+.hide {
+    display: none;
 }
 
-.cards-container {
-    display: flex;
-    justify-content: center;
+#modal-button {
+    max-width: 11%;
+    height: 10%;
+    border-radius: 50%;
+    margin-right: 5%;
 }
 
-.card-header-title {
-    justify-content: center;
+.modal-box {
+    height: 40%;
 }
 
-* {
-    font-family: 'Roboto Mono', sans-serif;
-    font-size: 35px;
+.modal-box ul li,
+.modal-box p {
+    color: white;
 }
 
-.departures {
+.box {
     justify-content: center;
     color: #f7f6e7;
     height: 50vh;
     margin: 10% 20% 20%;
     background-color: rgb(17, 16, 16);
-    background-color: rgb(17, 16, 16);
     border-radius: 10px;
-    background-color: rgb(17, 16, 16);
-    /* height: 40vh; */
-    margin: 5% 10% 10%;
-    background-color: rgb(17, 16, 16);
+    height: 40vh;
+    min-width: 60vh;
+    margin: 5% 5% 10% 5%;
     border-radius: 10px;
     padding: 10px;
     align-items: center;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
-.departures table {
-    background-color:#c1c0b9;
-    text-align: left;
-    border-radius: 10px;
+h1 {
+    text-align: center;
+    font-size: 1.5em;
+    /* padding-left: 3%; */
 }
 
-.departures table td {
-    height: 50px;
-}
-
-.departures h1 {
-    color:#537791;
-}
-
-.departures table th {
-    color:#323643;
-}
-
-.departures table div {
+.header-items {
     display: flex;
-    border: solid 5px rbg(26, 26, 26);
-    background-color: rgb(0, 0, 0);
-    min-width: 20px;
-    height: 40px;
-    float: left;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10%;
+    width: 80%;
 }
 
-#time {
-    width: 160px;
+#dropdown option {
+    text-align: center;
 }
 
-#destination {
-    width: 260px;
-}
-
-#flight {
-    width: 205px;
-}
-
-#gate {
-    width: 135px;
-}
-
-#remarks {
-    width: 260px;
-}
-
-.flip {
-    animation: 0.5s linear flipping;
-}
-
-@keyframes flipping {
-    0% {
-        transform: rotateX(0deg);
-    }
-
-    50% {
-        transform: rotateX(90deg);
-    }
-
-    100% {
-        transform: rotateX(0deg);
-    }
-}
-
-.hide {
-    display: none;
-  }
-
-#modal-button {
-    width: 5%;
-    height: 10%;
-    border-radius: 50%;
+#fetch-button {
+    background-color: darkgrey;
 }
