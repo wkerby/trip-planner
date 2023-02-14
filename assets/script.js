@@ -134,8 +134,6 @@ function setSelectedValue() {
   getAttractions(selected_value);
 }
 
-
-
 //create fucntion that removes all child elements of a parent element
 function removeEls(someList) {
   if (someList.children.length > 0) {
