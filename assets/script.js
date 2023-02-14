@@ -92,7 +92,7 @@ function getAttractions(city) {
   var apiOptions = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': 'b7e094d3c2msh52a7cd5d6c4a551p1d89aejsn6732427ea5d2',
+      'X-RapidAPI-Key': '52aab63322mshd42013a9d2eed84p13f5a3jsnc34da247312e',
       'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com'
     }
   };
@@ -107,11 +107,13 @@ function getAttractions(city) {
         if (data.data[i].result_type === "things_to_do") {
           // console.log(data.data[i].result_object);
           console.log(data.data[i].result_object.name);
-          var attraction = data.data[i].result_object.name;
-          var newLi = document.createElement("li");
-          newLi.setAttribute('class', 'attraction');
-          newLi.textContent = attraction;
-          ulAttractionsEl.appendChild(newLi);
+          for (var i = 0; i < 5; i++) {
+            var attraction = data.data[i].result_object.name;
+            var newLi = document.createElement("li");
+            newLi.setAttribute('class', 'attraction');
+            newLi.textContent = attraction;
+            ulAttractionsEl.appendChild(newLi);
+          }
         }
       };
 
