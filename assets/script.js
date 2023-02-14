@@ -134,6 +134,7 @@ function setSelectedValue() {
   getAttractions(selected_value);
 }
 
+<<<<<<< HEAD
 
 
 // //create fucntion that removes all child elements of a parent element
@@ -147,6 +148,19 @@ function setSelectedValue() {
 //       someList.children[i].remove();
 //     };
 //   }
+=======
+//create fucntion that removes all child elements of a parent element
+function removeEls(someList) {
+  if (someList.children.length > 0) {
+    listItems = someList.children
+    console.log(listItems);
+    console.log("Current num list items: " + listItems.length);
+    for (var i = 0; i < listItems.length; i++) {
+      console.log(listItems.length);
+      someList.children[i].remove();
+    };
+  }
+>>>>>>> 2a223a2214dd0168b723612742ff25c38dfd8996
 
 //   else {
 //     console.log("no els to remove")
