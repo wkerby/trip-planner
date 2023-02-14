@@ -2,7 +2,7 @@
 
 * {
     font-family: 'Open Sans', sans-serif;
-    color: black;
+    color: white;
     font-size: 35px;
 }
 
@@ -106,8 +106,13 @@ h1 {
 
 
 
+.header-items button {
+    font-size: 1em;
+}
+
 #dropdown option {
     text-align: center;
+    color: black;
 }
 
 #fetch-button {
