@@ -1,3 +1,5 @@
+var buttonEl = document.querySelector("#fetch-button");
+init();
 
 //----------------------------------Modal------------------------------------------------------
 
@@ -132,6 +134,8 @@ var selectedCapital = document.getElementById("dropdown");
 function setSelectedValue() {
   var selected_value = selectedCapital.options[selectedCapital.selectedIndex].value;
   getAttractions(selected_value);
+  localStorage.setItem("currentCity", selected_value);
+  console.log(selected_value);
 }
 
 //create fucntion that removes all child elements of a parent element
@@ -151,3 +155,14 @@ function removeEls(someList) {
   //   };
   // };
 };
+
+function init() {
+  if (localStorage.currentCity) {
+    getAttractions(localStorage.currentCity);
+    // hideButton();
+  }
+  // var currentCityEl = document.querySelector("#current-city");
+
+  // currentCityEl.textContent = localStorage.currentCity;
+
+}
