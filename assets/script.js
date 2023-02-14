@@ -86,7 +86,7 @@ fetchButton.addEventListener('click', getApi)
 function getAttractions(city) {
   // var city = document.querySelector("option").textContent;
   var ulAttractionsEl = document.querySelector('#attractions-list'); //remove any li elements from previous search
-  removeEls(ulAttractionsEl);
+  ulAttractionsEl.textContent = "";
   var fetchUrl = "https://travel-advisor.p.rapidapi.com/locations/search?query=" + city + "&limit=30&offset=0&units=km&location_id=1&currency=USD&sort=relevance&lang=en_US"
 
   var apiOptions = {
@@ -146,8 +146,8 @@ function removeEls(someList) {
     };
   }
 
-  else {
-    console.log("no els to remove")
-  };
+  //   else {
+  //     console.log("no els to remove")
+  //   };
+  // };
 };
-
