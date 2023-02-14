@@ -86,7 +86,7 @@ fetchButton.addEventListener('click', getApi)
 function getAttractions(city) {
   // var city = document.querySelector("option").textContent;
   var ulAttractionsEl = document.querySelector('#attractions-list'); //remove any li elements from previous search
-  removeEls(ulAttractionsEl);
+  ulAttractionsEl.textContent = "";
   var fetchUrl = "https://travel-advisor.p.rapidapi.com/locations/search?query=" + city + "&limit=30&offset=0&units=km&location_id=1&currency=USD&sort=relevance&lang=en_US"
 
   var apiOptions = {
@@ -136,20 +136,20 @@ function setSelectedValue() {
 
 
 
-//create fucntion that removes all child elements of a parent element
-function removeEls(someList) {
-  if (someList.children.length > 0) {
-    listItems = someList.children
-    console.log(listItems);
-    console.log("Current num list items: " + listItems.length);
-    for (var i = 0; i < listItems.length; i++) {
-      console.log(listItems.length);
-      someList.children[i].remove();
-    };
-  }
+// //create fucntion that removes all child elements of a parent element
+// function removeEls(someList) {
+//   if (someList.children.length > 0) {
+//     listItems = someList.children
+//     console.log(listItems);
+//     console.log("Current num list items: " + listItems.length);
+//     for (var i = 0; i < listItems.length; i++) {
+//       console.log(listItems.length);
+//       someList.children[i].remove();
+//     };
+//   }
 
-  else {
-    console.log("no els to remove")
-  };
-};
+//   else {
+//     console.log("no els to remove")
+//   };
+// };
 
