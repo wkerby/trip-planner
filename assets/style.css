@@ -73,7 +73,6 @@ body {
     background-color: rgb(17, 16, 16);
     border-radius: 10px;
     height: 40vh;
-    min-width: 60vh;
     margin: 5% 5% 10% 5%;
     border-radius: 10px;
     padding: 10px;
@@ -95,10 +94,69 @@ h1 {
     width: 80%;
 }
 
+.selection {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    size: 25px;
+}
+
+
+
 #dropdown option {
     text-align: center;
 }
 
 #fetch-button {
     background-color: darkgrey;
+}
+
+
+@media only screen and (max-width: 375px) {
+    /* For mobile phones: */
+    body {
+        background-color: rgb(147, 210, 249);
+        height: 100vh;    }
+}
+
+@media only screen and (max-width: 578px) {
+    /* For mobile phones: */
+    body {
+        background-color: rgb(147, 210, 249);
+        height: 100vh;    }
+
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    body {
+        background-color: rgb(147, 210, 249);
+        height: 100vh;    }
+        
+}
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+    body {
+        background-color: rgb(147, 210, 249);
+        height: 100vh;    }
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+    body {
+        background-color: rgb(147, 210, 249);
+        height: 100vh;    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    body {
+        background-color: rgb(147, 210, 249);
+        height: 100vh;    }
 }
