@@ -1,4 +1,5 @@
 var buttonEl = document.querySelector("#fetch-button");
+var currentCityEl = document.querySelector("#current-city");
 init();
 
 //----------------------------------Modal------------------------------------------------------
@@ -159,10 +160,17 @@ function removeEls(someList) {
 function init() {
   if (localStorage.currentCity) {
     getAttractions(localStorage.currentCity);
+    currentCityEl.textContent = localStorage.currentCity;
+    currentCityEl.style.visibility = "hidden";
+    buttonEl.style.visibility = "visible";
     // hideButton();
   }
-  // var currentCityEl = document.querySelector("#current-city");
 
-  // currentCityEl.textContent = localStorage.currentCity;
+  else {
+
+  }
+
+
+
 
 }
