@@ -2,7 +2,11 @@
 
 * {
     font-family: 'Open Sans', sans-serif;
+<<<<<<< HEAD
     color: rgb(255, 255, 255);
+=======
+    color: white;
+>>>>>>> 8aa62dc0c466fee5059b4e6897e2836d87095a06
     font-size: 35px;
 }
 
@@ -96,8 +100,13 @@ h1 {
     width: 80%;
 }
 
+.header-items button {
+    font-size: 1em;
+}
+
 #dropdown option {
     text-align: center;
+    color: black;
 }
 
 #fetch-button {

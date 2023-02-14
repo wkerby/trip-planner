@@ -103,20 +103,33 @@ function getAttractions(city) {
       return response.json();
     })
     .then(function (data) {
+      var counter = 0;
       for (var i = 0; i < data.data.length; i++) {
+<<<<<<< HEAD
         if (data.data[i].result_type === "things_to_do") {
           // console.log(data.data[i].result_object);
           console.log(data.data[i].result_object.name);
           for (var i = 0; i < 5; i++) {
+=======
+        if (counter <= 4) {
+          if (data.data[i].result_type === "things_to_do") {
+            counter++;
+            console.log(data.data[i].result_object.name);
+>>>>>>> 8aa62dc0c466fee5059b4e6897e2836d87095a06
             var attraction = data.data[i].result_object.name;
             var newLi = document.createElement("li");
             newLi.setAttribute('class', 'attraction');
             newLi.textContent = attraction;
             ulAttractionsEl.appendChild(newLi);
           }
+<<<<<<< HEAD
+=======
+        }
+        else {
+          break;
+>>>>>>> 8aa62dc0c466fee5059b4e6897e2836d87095a06
         }
       };
-
     });
   var ulAttractionsEl = document.querySelector('#attractions-list');
   console.log(ulAttractionsEl.children);
