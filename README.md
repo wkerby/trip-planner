@@ -12,7 +12,7 @@ N/A
 
 This web application usage will target the audience of users who are interested in learning about attractions based on any capital city in the world. 
 
-<a href="https://github.com/wkerby/trip-planner">Deployed Website Link</a>
+<a href="https://wkerby.github.io/trip-planner/">Deployed Website Link</a>
 
 ![alt text](assets/images/application-screenshot.png)
 
