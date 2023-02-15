@@ -1,4 +1,8 @@
+//create variable for button prompting user to select a city
 var buttonEl = document.querySelector("#fetch-button");
+//create variable for currently selected city
+var currentCityEl = document.querySelector("#current-city");
+//run init function upon page refresh 
 init();
 
 //----------------------------------Modal------------------------------------------------------
@@ -55,6 +59,7 @@ var fetchButton = document.getElementById('fetch-button');
 var select = document.getElementById("dropdown");
 var menu = document.getElementById('selection');
 
+//create function that provides list of cities from which to choose in dropdown element
 function getApi() {
 
   var requestUrl = "https://restcountries.com/v2/all?fields=name,capital";
@@ -64,7 +69,6 @@ function getApi() {
       return response.json();
     })
     .then(function (data) {
-      // console.log(data);
       for (var i = 0; i < data.length; i++) {
         var option = document.createElement("option");
         option.textContent = data[i].capital
@@ -82,9 +86,7 @@ fetchButton.addEventListener('click', getApi)
 
 //----------------------------------Attraction List Box------------------------------------------------------
 
-// const attractions = []
-
-//create function that fetches city ID based off of city input
+//create function that fetches list of attractions based off of city input
 function getAttractions(city) {
   // var city = document.querySelector("option").textContent;
   var ulAttractionsEl = document.querySelector('#attractions-list'); //remove any li elements from previous search
@@ -101,16 +103,14 @@ function getAttractions(city) {
 
   fetch(fetchUrl, apiOptions)
     .then(function (response) {
-      // console.log("Response: " + response.status);
       return response.json();
     })
     .then(function (data) {
       var counter = 0;
       for (var i = 0; i < data.data.length; i++) {
-        if (counter <= 4) {
+        if (counter <= 4) { //limit the number of attractions displayed to a maximum of 5 
           if (data.data[i].result_type === "things_to_do") {
             counter++;
-            console.log(data.data[i].result_object.name);
             var attraction = data.data[i].result_object.name;
             var newLi = document.createElement("li");
             newLi.setAttribute('class', 'attraction');
@@ -124,45 +124,30 @@ function getAttractions(city) {
       };
     });
   var ulAttractionsEl = document.querySelector('#attractions-list');
-  console.log(ulAttractionsEl.children);
 
 }
 
 
 var selectedCapital = document.getElementById("dropdown");
 
+//create function that returns list of attractions when a city is selected from dropdown list
 function setSelectedValue() {
   var selected_value = selectedCapital.options[selectedCapital.selectedIndex].value;
   getAttractions(selected_value);
-  localStorage.setItem("currentCity", selected_value);
-  console.log(selected_value);
+  localStorage.setItem("currentCity", selected_value); //store current selected city in localStorage object
 }
 
-//create fucntion that removes all child elements of a parent element
-function removeEls(someList) {
-  if (someList.children.length > 0) {
-    listItems = someList.children
-    console.log(listItems);
-    console.log("Current num list items: " + listItems.length);
-    for (var i = 0; i < listItems.length; i++) {
-      console.log(listItems.length);
-      someList.children[i].remove();
-    };
-  }
-
-  //   else {
-  //     console.log("no els to remove")
-  //   };
-  // };
-};
-
+//create function that renders the attractions list of last selected city onto page upon refresh
 function init() {
   if (localStorage.currentCity) {
     getAttractions(localStorage.currentCity);
-    // hideButton();
+    currentCityEl.textContent = localStorage.currentCity;
+    currentCityEl.style.visibility = "hidden";
+    buttonEl.style.visibility = "visible";
   }
-  // var currentCityEl = document.querySelector("#current-city");
 
-  // currentCityEl.textContent = localStorage.currentCity;
+  else {
+
+  }
 
 }
