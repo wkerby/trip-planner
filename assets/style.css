@@ -149,13 +149,17 @@ h1 {
     .items, .select, .box, .control {
         width: 100%;
       }
+    .attraction {
+        font-size: medium;
+    }
   }
   
   /* Cards are stacked on top of each other at 768px or smaller */
   @media screen and (max-width: 768px) {
     .items, .select, .box, .control {
       width: 100%;
-
     }
- 
+    .attraction {
+        font-size: medium;
+    }
   }
